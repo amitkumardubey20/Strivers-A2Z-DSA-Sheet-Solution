@@ -1,0 +1,19 @@
+package Striver_A_to_Z_Sheet;
+import java.util.Scanner;
+
+public class String_Rotation {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s1=sc.nextLine();
+        String s2=sc.nextLine();
+        System.out.println(rotation(s1,s2));
+    }
+    public static boolean rotation(String s1,String s2){
+        if(s1.length()!=s2.length()) return false;
+
+        String ans=s1+s1;
+        if(ans.contains(s2)) return true;
+
+        return false;
+    }
+}
