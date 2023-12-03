@@ -1,0 +1,33 @@
+package Striver_A_to_Z_Sheet;
+import java.util.Scanner;
+public class maximum_Nesting_depth_of_paranthesis {
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        System.out.println(checkingParan(s));
+    }
+
+    public static int checkingParan(String str){
+        int depth=0,maxdepth=0;
+
+        for(int i=0;i<str.length();i++){
+            if(str.charAt(i)=='(') {
+                depth++;
+                maxdepth=Math.max(depth,maxdepth);
+            }
+            if(str.charAt(i)==')'){
+                depth--;
+                maxdepth=Math.max(depth,maxdepth);
+            }
+        }
+        return maxdepth;
+    }
+}
+
+
+Approach---> 
+ //  Iterate through the string
+// everytime you see '(' counter++
+// everytime you see ')' counter--
+// everytime check if you need to change your maxCounter( Math.max(maxCounter,counter) )
+// return maxCounter
