@@ -1,0 +1,18 @@
+public class Solution
+{
+    public static Node deleteLastNode(Node head) {
+        // Write your code here
+
+        if(head.next==null) return null;
+
+        Node temp=head;
+        Node curr=null;
+
+        while(temp.next!=null){
+            curr=temp;
+            temp=temp.next;
+        }
+        curr.next=null;
+
+        return head;
+    }
